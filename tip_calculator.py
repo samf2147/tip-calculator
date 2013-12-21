@@ -1,7 +1,12 @@
-meal = float(raw_input('Enter the cost of your meal '
-	'before tax in dollars:	'))
-tax = float(raw_input('Enter the tax as a percentage: '))
-tip = float(raw_input('Enter the tip as a percentage: '))
+import sys
+
+if(len(sys.argv) != 4):
+	print 'Usage: python tip_calculator.py meal tax tip'
+	quit()
+
+meal = float(sys.argv[1])
+tax = float(sys.argv[2])
+tip = float(sys.argv[3])
 
 tax_value = 0.01 * tax * meal
 meal_with_tax = meal + tax_value
